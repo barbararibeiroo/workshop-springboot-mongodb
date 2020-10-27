@@ -7,5 +7,6 @@ import com.barbararibeiro.workshopmongo.domain.Usuario;
 
 @Repository
 public interface UsuarioRepositorio extends MongoRepository<Usuario, String>{
-	
+
+
 }
