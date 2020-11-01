@@ -1,20 +1,21 @@
 package com.barbararibeiro.workshopmongo.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.barbararibeiro.workshopmongo.DTO.AutorDTO;
+import com.barbararibeiro.workshopmongo.DTO.ComentarioDTO;
 
 @Document
 public class Post implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final Usuario AutorDTO = null;
-	
 	@Id
 	private String id;
 	private Date data;
@@ -22,6 +23,8 @@ public class Post implements Serializable {
 	private String corpo;
 	private AutorDTO autor;
 
+	private List<ComentarioDTO> comentarios = new ArrayList<>();
+	
 	public Post() {
 
 	}
@@ -74,6 +77,14 @@ public class Post implements Serializable {
 	public void setAutor(AutorDTO autor) {
 		this.autor = autor;
 	}
+	
+	public List<ComentarioDTO> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(List<ComentarioDTO> comentarios) {
+		this.comentarios = comentarios;
+	}
 
 	@Override
 	public int hashCode() {
@@ -99,5 +110,7 @@ public class Post implements Serializable {
 			return false;
 		return true;
 	}
+
+
 
 }
