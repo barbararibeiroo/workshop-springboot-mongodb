@@ -1,5 +1,6 @@
 package com.barbararibeiro.workshopmongo.servico;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,11 @@ public class PostServico {
 	}
 	
 	public List<Post> findByTitle(String texto){
-		return repo.findByTitleContainingIgnoreCase(texto);
+		return repo.searchTitle(texto);
 	}
-
+	public List<Post> fullSearch(String texto, Date minDate, Date maxDate){
+		//ACRESCENTANDO MAIS UM DIA NA DATA MÁXIMA
+		maxDate = new Date(maxDate.getTime() + 24 * 60 * 60 * 1000);
+		return repo.fullSearch(texto, minDate, maxDate);
+	}
 }
