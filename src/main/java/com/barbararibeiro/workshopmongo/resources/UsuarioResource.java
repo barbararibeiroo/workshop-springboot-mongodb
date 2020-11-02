@@ -65,4 +65,5 @@ public class UsuarioResource {
 		Usuario obj = servico.findById(id);
 		return ResponseEntity.ok().body(obj.getPosts());
 	}
+
 }

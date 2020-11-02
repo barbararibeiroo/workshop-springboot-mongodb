@@ -19,7 +19,8 @@ import com.barbararibeiro.workshopmongo.repositorio.UsuarioRepositorio;
 public class Instantiation implements CommandLineRunner {
 
 	@Autowired
-	private UsuarioRepositorio usuarioRepositorio;
+	private UsuarioRepositorio usuarioRepositorio;	
+
 	@Autowired
 	private PostRepositorio postRepositorio;
 	
